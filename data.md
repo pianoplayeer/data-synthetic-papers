@@ -64,8 +64,16 @@ https://dl.acm.org/doi/epdf/10.1145/3773966.3779380
 
 
 
-Efficient Source-free Unlearning via Energy-Guided Data Synthesis and Discrimination-Aware Multitask Optimization
+### Efficient Source-free Unlearning via Energy-Guided Data Synthesis and Discrimination-Aware Multitask Optimization
 
 用gpt看着估计样本的一个能量函数建模要遗忘的类别的数据的分布，根据随机噪声来合成数据，感觉可以根据这个对于遗忘难的样本进行合成类似数据？
 
 具体细节还需要看看论文
+
+
+
+对于分类任务，在原始数据无法获取的情况下，如何遗忘某类数据？
+
+1. 根据模型输出的分布，合成类似原始分布的数据，根据分布从噪声合成具体图像数据，分别根据要遗忘的类别和要保留的类别进行数据合成
+
+2. 在要遗忘的类别合成的数据上遗忘、要保留的类别合成的数据上记忆，并将一个梯度投影到另一个梯度上，来调解梯度冲突。
